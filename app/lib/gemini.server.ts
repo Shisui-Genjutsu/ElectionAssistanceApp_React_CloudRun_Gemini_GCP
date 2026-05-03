@@ -11,8 +11,8 @@ function getGenAI() {
 
 export async function embedText(text: string): Promise<number[]> {
   const genAI = getGenAI();
-  // text-embedding-004 is the current stable embedding model
-  const model = genAI.getGenerativeModel({ model: "text-embedding-004" });
+  // gemini-embedding-001 is the correct stable embedding model for AI Studio keys
+  const model = genAI.getGenerativeModel({ model: "gemini-embedding-001" });
   const result = await model.embedContent(text);
   return result.embedding.values;
 }
